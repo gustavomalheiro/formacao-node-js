@@ -1,0 +1,56 @@
+MÓDULO 2: O QUE É HTTP?
+
+    quando se fala de desenvolvimento web, ainda mais backend, é muito importante saber sobre http, que é o que
+    move a web.
+
+    um exemplo prático: 
+    jonas em seu computador faz uma pesquisa para sua faculdade, buscando no google e o google retorna a pesquisa.
+
+    como é possível jonas se comunicar com o servidor da google? ele só consegue fazer isso graças a um cara chamado
+    HTTP, um protocolo de transferência de dados na web, ou seja, o jonas só consegue se comunicar com o google e o 
+    google com o jonas graças a essa transferência, graças ao protocolo HTTP que está compartilhando infromaçoes entr
+    esses dois.
+
+    então, o jonas manda uma REQUISIÇÃO de pesquisa para o servidor Google, onde a aplicação web do google está rodando]
+    e ele manda uma requisição sobre uma pesquisa de javascript. E isso tudo só é possível graças a um cara chamado http.
+
+    você só consegue acessar sites graças ao http.
+
+    o http ele é dividido nessas duas ações: requisição e resposta.
+
+    então o jonas faz uma requisição e o servidor da google retorna esse resultado para o jonas. e isso só é possível porque
+    o http permite a transferência de dados.
+
+    você só consegue se comunicar com uam aplicação web graças ao http. é o protocolo que move a web.
+
+    é a base de qualquer aplicação web hoje em dia.
+
+    nessa aula vamos aprender a criar nossa primeira aplicação http.
+
+    vamos fazer isso graças a um módulo/biblioteca já pronto do node, o módulo http.
+
+    o node vem com vários módulos já prontos e um dele é o http.
+
+    porém, existe outro módulo do node chamado fs, para a manipulação de arquivos. mas só vamos cumprir isso nos conteúdos
+    extras.
+
+    exportaremos o módulo http dentro do nosso arquivo.
+
+    com a função create server eu posso criar um servidor http e passar no listen uma porta como parâmetro para criar meu servidor
+
+    a partir de quando executamos esse código, ele está criando um servidor na sua máquina na porta que você digitou (no meu caso, 8181)
+
+    para acessar, temos que ir na porta pelo navegador. teremos que acessar o localhost, que significa que estou acessando minha
+    máquina local, e selecionar porta: localhost:8181.
+
+    a primeira vista, nada acontece, pois nada foi programado para acontecer. 
+
+    o nosso servidor não está funcionando porque não programamos nenhuma resposta para o usuário.
+
+    com a variável resposta que passamos como parametro para função createServer, podemos adicionar uma resposta do nosso
+    servidor ao usuário.
+
+    isso que é um servidor http. nós recebemos a requisição de um usuário e passamos uma resposta para ele. no nosso, caso
+    a resposta é "bem vindo ao meu site".
+
+    com esse código, poderíamos subir em alguma hospedagem e qualquer pessoa poderia acessar nosso site. isso é o http.

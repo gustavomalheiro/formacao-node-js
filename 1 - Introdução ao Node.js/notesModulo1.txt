@@ -1,0 +1,74 @@
+MÓDULO 1: INTRODUÇÃO AO NODE.JS
+		
+		
+	para entender o node.js, temos que entender o Javascript. Ele foi criado para rodar apenas nos 
+	navegadores.
+	
+	todos os navegadores que entendem javascript tem um interpretador, que permite que o código js
+	seja executado na web. ex: v8 (chrome)
+	
+	um interpretador é um software responsável por entender os códigos e executar o código.
+	
+	o Node.js é um interpretador Javascript que roda fora dos navegadores. graças ao node, hoje em 
+	dia eu posso executar códigos independentemente dos navegadores.
+	
+	o que será que posso construir com javascript fora dos navegadores?
+		- aplicações web backend;
+		- aplicações desktop;
+		- aplicações de linha de comando;
+		- aplicações móveis.
+		
+	ele era preso aos navegadores, mas hoje em dia, graças ao node.js, você consegue criar qualquer 
+	tipo de aplicação.
+	
+	também conseguimos nos comunicar com bancos de dados, criar aplicações como paypal, facebook e 
+	netflix. tudo isso com o javascript no node.js.
+	
+	por que usar node.js?
+		- muito leve (mais leve que muitas tecnologias);
+		- muito rápido (entre as 10 mais rápidas);
+		- usa javascript (a linguagem mais utilizada do mercado);
+		- tem um dos maiores ecossistemas do mundo (tem muitas bibliotecas disponíveis para tudo 
+		quanto é tipo de coisa);
+		- está sendo fortemente utilizado no mercado (netflix, uber e paypal);
+		
+
+	um arquivo node é apenas um arquivo javascript.
+
+	console.log serve para mostrar algo no console do navegador ou do computador (com node).
+
+	O que são Módulos no Node?
+
+		modulos são pedaços do seu programa.
+
+		eles não são um recurso da linguagem javascript, mas sim do node.js.
+
+		quando você está desenvolvendo um programa em node.js, você não mode deixar tudo em um único
+		arquivo.
+
+		os módulos são uma forma de você separar o seu código em vários arquivos. dividir sua aplicação
+		em partes para manter seu código organizado.
+
+		mas não é apenas isso. os módulos também são utilizados quando você quer utilizar alguma biblioteca
+		no seu node. Como por exemplo a biblioteca de desenvolvimento web.
+
+		no nosso exemplo da calculadora, estamos exportando a função soma do módulo calculadora, para que no
+		arquivo módulos, possamos utilizar essa função.
+
+		no javascript eu consigo tratar funções da mesma forma que trato variáveis. então consigo passar funções 
+		para uma variável javascript e utilizalas no meu código como funções.
+
+		então, o módulo é BASICAMENTE duas coisas: exportar e receber através de um require. quando você recebe,
+		recebe com um nome.
+
+		mas seria muito ruim se tivéssemos que exportar cada função em um único arquivo. mas você pode ter multiplas
+		funções em um único arquivo. basta exportar um objeto com o nome de todas as funções que você deseja exportar
+		lá no arquivo, você pode acessar essas funções utilizando o ponto.
+
+		então eu tenho todas as funções de uma calculadora em um único módulo, e sempre que eu precisar importar em algum
+		lugar, eu faço através do required.
+		
+		o exports também serve para variáveis. Podemos adicioná-las em nosso objeto exportado, nos permitindo acessa-las
+		e modifica-las no arquivo.
+
+		os modulos serão seus melhores amigos quando trabalha com node, pois permite uma grande organização do seu programa.
