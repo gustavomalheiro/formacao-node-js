@@ -1,0 +1,156 @@
+MÓDULO 3: FUNDAMENTOS DO EXPRESS.JS
+
+    O que é o Express.js e NPM?
+
+    o express é um framework para desenvolvimento web com o node.js.
+
+    um framework é basicamente uma super biblioteca que te ajuda a fazer uma determinada tarefa.
+
+    graças ao express nós conseguimos construir qualquer tipo de aplicação web backend com o node.
+    ele nos trás várias ferramentas que podemos utilizar em nossos códigos para desenvolver aplicações web
+    robustas e completas.
+
+    o módulo http que vem com o node, não é suficiente para podermos desenvolver aplicações reais com node.
+
+    o express é a maneira mais simples, fácil e mais popular de se construir aplicações web node.js.
+
+    esse módulo vai te dar toda a base do express e assim conseguiremos produzir nossos próprios projetos práticos.
+
+    o npm (node package manager) é o gerenciador de pacotes do node. ele serve para criarmos projetos node e baixarmos
+    diversas bibliotecas.
+
+    entry point: arquivo inicial do projeto (main)
+
+    iniciando um projeto npm, fica mais fácil gerenciar instalação de bibliotecas nele. Criar um projeto npm gera um arquivo
+    package.json no seu projeto que fala tudo sobre ele. nome, author, descrição, versão, arquivo principal, mas o mais importante é que ele fala
+    quais bibliotecas estão instaladas no projeto.
+
+    agora com um projeto node em mãos, podemos instalar o express com a linha de comando que é mostrada no site do express: npm install express --save
+    esse --save é um comando de instalação que vai salvar os arquivos do express na página do seu projeto.
+
+    lembre-se de não colocar o mesmo nome do seu projeto da dependência que você está tentando instalar. o npm não aceita esse tipo de coisa
+
+    assim que você criar seu projeto, vai ser criado uma pasta chamada node_modules, que é onde fica instalado todas as bibliotecas do seu projeto
+    o express foi feito em cima de várias bibliotecas, então vão estar lá muitas bibliotecas que o express depende.
+
+    lá no arquivo package.json, teremos agora na parte de depndecies o express. esse arquivo é como se fosse o RG  de nosso projeto
+    então se um dev pegar esse arquivo ele já vai saber como é composto seu projeto. todas as informações necessárias estarão lá.
+
+    Estrutura inicial:
+
+    na aula passada instalamos o express no nosso projeto node.js, entendemos o que é o npm e entendemos o package.json
+
+    a primeira coisa a fazer é criar um arquivo inicial (index).
+
+    precisamos importar o express como um módulo em nosso projeto e instanciá-lo para que possamos usar seus recursos.
+
+    se mostrou cannot get, é porque o servidor está funcionando.
+
+    Rotas:
+
+    para entendermos o erro anterior, temos que entrar um pouco no assunto rotas.
+
+    para exemplificar, nós temos rotas diferentes para chegar em diferentes lugares, como por exemplo: trabalho, praça e cinema
+
+    temos rotas diferentes dependendo do lugar onde estamos e onde pretendemos chegar.
+
+    tendo isso em mente, vamos trazer esse conceito para  a programação.
+
+    nós temos várias páginas: home, perfil de usuário, página de assistir vídeos e eu tenho a página de carrinho de compras.
+
+    no meio, temos o nosso servidor express rodando com o node.
+
+    o endereço do nosso servidor é www.meuapp.com. quando o usuário acessa esse endereço, ele manda uma requisição para o seu servidor.
+
+    mas como o usuário vai acessar as páginas do seu sistema? exatamente, utilizando de rotas. existe uma rota para acessar cada uma das páginas.
+
+    então, quando o usuário acessar nosso servidor express, ele vai ser redirecionado para alguma rota que leva a algum destino (uma página diferente).
+
+    ex de rota real: 
+
+    meuapp.com/perfil -> rota de pergil
+
+    meuapp.com/carrinho -> rota do carrinho
+
+    meuapp.com/video/12 -> rota do video 12
+
+    meuapp.com -> home (padrão)
+
+    isso que é uma rota. diversos caminhos que a sua aplicação tem.
+
+    agora podemos ver porque o erro acontece. ele acontece porque não existe NENHUMA rota na nossa aplicação.
+
+    vamos criar uma rota.
+
+    abrir o servidor é a última coisa que você faz.
+
+    para criar uma rota simples: app.get() existem outras formas de criar rotas, mas essa é a mais simples
+
+    app.get("/") -> a url / significa a página inicial da nossa aplicação. quando eu só coloco o nome da minha aplicação e mais nada.
+
+    a nossa rota também recebe uma função que vai ser chamada sempre que ela iniciar. essa função recebe como parâmetro uma requisição e uma resposta.
+
+    porém, a nossa rota existe e não faz nada. toda a rota que criamos devemos devolver uma resposta. 
+
+    para isso, usaremos o send: res.send() onde dentro colocaremos a resposta para o usuário que requisitou.
+
+    toda rota que criamos tem que devolver uma resposta para o usuário obrigatoriamente. pode ser html, arquivo, download, json, xml
+    mas de alguma forma você deve responder o seu usuárioo se não ele vai ficar travado e carregando infinitamente.
+
+    um erro que muita gente comete é colocar uma resposta duas vezes. você só pode enviar uma respostar uam única vez, se não dará um erro
+    pois quando voce envia a resposta uma vez, você meio que fecha a conexão com o cliente. então quando vai mandar a próxima, a conexão está fechada.
+
+    quando um usuário acessar uma rota, ele vai executar a função que vai retornar algo.
+
+    não é muito bem recomendado colocar tags html nas respostas de texto.
+
+    então, basicamente isso é uma rota. são caminhos para respostas diferentes da sua aplicação.
+
+    Carregamento automático:
+
+    para atualizar nossa aplicação, estavamos tendo que parar nosso servidor. mas na vida real isso não acontece, então para
+    evitar isso nós precisamos trabalhar com o modulo do node chamado nodemon que sempre que nossa aplicação sofrer algumas alteração, 
+    ele vai atualizar nosso servidor. npm install nodemon -g quando você instala alguma biblioteca utilizando o -g, você quer instalar ela globalmente
+    no seu computador e não limitar a apenas um projeto.
+
+    então, com essa biblioteca, o nosso servidor é reiniciado automaticamente sem que precisemos fazê-lo
+
+    Parâmetros:
+
+    parâmetros são formas de você passar valores dinâmicos direto na sua rota.
+
+    vamos ver como adicionar mais poder ainda nas rotas trabalhando com parâmetros. basicamente seria dar ao usuário a adicionar uma barra
+    na url e colocar posteriormente qualquer valor que ele quiser. nos permitindo assim, tratar e capturar a informação da forma que quisermos.
+
+    adicionamos parâmetros com um : depois do nome da rota e o nome do parâmetro -> app.get("/ola/:nome"
+
+    se você criar uma rota com parâmetro, você só vai conseguir acessar essa rota com o parâmetro junto
+    exemplo: a rota ola não existe mais, pois agora apenas existe a rota ola/alguma coisa.
+
+    sempre que você acessa uma rota, você pede para executar a função que está ligada a ela, que por sua vez recebe como parâmetro requisição e resposta
+    requisições são dados enviados pelo o usuário, e é por ela que conseguiremos tratar os dados enviados por eles.
+
+    para fazer isso, utilizaremos a variável req e para mostrar o que o usuário passou como parâmetro na tela, colocaremos dentro de res:
+    res.send(req.params.nome);
+
+    o comando params. é o que pega o que o usuário digitou.
+
+    podemos mandar os parametros para uma variável e assim tratar melhor nossa resposta.
+
+    podemos até passar mais de um parâmetro, em ordem
+
+    mas até agora, todos os parâmetros que colocamos são obrigatórios.
+
+    para transformar um parâmetro em opcional, basta colocar uma ? logo após ele.
+
+    podemos tambem criar uma solução para que os parâmetros além de serem opcionais, tenham uma resposta própria.
+
+    Query params:
+
+    O query param é um parâmetro que não é fixo na rota.
+
+    na aula passada, aprendemos parâmetros diretos no express que temos que definir direto na rota.
+
+    porém, muitas vezes você quer definir parâmetros de uma forma que não seja colada na rota.
+
+    e para isso que servem os queryparams. porém, como não são definidos na rota, eles são completamente opcionais.

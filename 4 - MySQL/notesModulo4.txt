@@ -1,0 +1,78 @@
+ MÓDULO 4: MYSQL (CURSO EXTRA):
+
+    MySQL é um sistema de gerenciamento de banco de dados.
+
+    um banco de dados serve para guardar dados e quando estamos criando um backend precisamos armazenar dados.
+
+    assim como o node, o mysql é uma ferramenta de linha de comando.
+
+    mas diferente do node, o windows nao é linkado automaticamente no cmd, então precisamos linkar o executavel do mysql no cmd.
+
+    depois de configurar as variáveis de ambiente, ele estará pronto para uso (porém não funcionou aqui :)
+
+    pode usar também o mysql command line que já vem junto com a instalação pelo mysql installer.
+
+    Tabelas:
+
+    vamos criar nossa primeira tabela.
+
+    a primeira coisa é nos conectar ao nosso servidor mysql que criamos durante a instalação.
+
+    comando: mysql -h localhost -u root -p    
+
+    show databases; -> mostra os db dentro do mysql
+
+    create database nome_banco -> criar bando de dados
+
+    use nome_banco -> acessar um bando de dados específico (ser database changed, acessou o banco).
+
+    uma tabela possui colunas e linhas. o mysql guarda dados no formato de tabelas.
+
+    cada uma das colunas possui um tipo específico. ex: uma coluna idade é do tipo int, uma coluna nome é do tipo texto.
+
+    alguns tipos de dados do mysql:
+        - varchar
+        - char
+        - int
+        - float
+        - date  
+        - blob (para arquivos, apesar de não ser bem recomendado)
+
+    show tables; -> mostrar tabelas do db
+
+    create table nome_tabela( colunas e seus tipos); -> criando tabelas
+
+    describe nome_tabela -> mostra a estrutura da tabela
+
+    Insert, select e where:
+
+    insert into nome_tabela( nome das colunas) values (nome dos campos em ordem); -> inserir um novo dado em uma coluna
+
+    select * from nome_tabela; -> exibir todos os dados de uma tabela
+
+    select * from nome_tabela where idade = 8; -> utilizando a palavra where, conseguimos selecionar apenas usuários que atendem a condição que precisamos.
+    então conseguimos utilizar operadores para especificar nossa pesquisa, como =, >=, etc.
+
+    Delete:
+
+    a clausa delete serve para você deletar registros dentro de uma tabela.
+
+    de todas ela é a mais simples.
+
+    delete from nome_tabela -> rodar esse código dessa forma, TODA SUA TABELA SERÁ EXCLUIDA CUIDADO!
+
+    delete from nome_tabela where condicao -> irá deletar somente onde a condição é atendida!
+
+    Update:
+
+    clausula para atualizar dados nas tabelas.
+
+    update nome_tabela set campo = "novo dado" -> irá atualizar todos os campos da coluna nome com o novo dado
+
+    podemos também passar mais de um campo:
+
+    update nome_tabela set campo = "novo dado", campo2 = "novo dado 2"   
+
+    porém, fazendo desta maneira, TODA a coluna será alterada para o novo dado. CUIDADO! 
+
+    tanto o update quanto o delete são necessários de serem usados com o where, para que não haja problemas.
